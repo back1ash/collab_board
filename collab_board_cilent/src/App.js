@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom';
-import Write from './Write';
-import Home from './Home';
+import Write from './write';
+import Home from './home';
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
             </Link>
           </>
         </Switch>
-        <Route path="/" component={Home} />
+        <Route exact path="/" component={Home} />
         <Route path="/write" component={Write} />
       </Router>
     </div>
