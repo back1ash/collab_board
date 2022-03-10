@@ -1,31 +1,26 @@
-import * as React from 'react';
-import { render } from 'react-dom';
-import { Link, BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './Home';
+import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom';
 import Write from './Write';
+import Home from './Home';
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <header>
-          <Link to="/">
-            <button>Home</button>
-          </Link>
-          <Link to="/write">
-            <button>write</button>
-          </Link>
-          <Link to="/users">
-            <button>Users</button>
-          </Link>
-        </header>
-        <main>
-          <Route path="/" element={<Home />} />
-          <Route path="/write" element={<Write />} />
-        </main>
-      </Routes>
-    </Router>
+    <div className="App">
+      <Router>
+        <Switch>
+          <>
+            <Link to="/">
+              <button>Home</button>
+            </Link>
+            <Link to="/write">
+              <button>write</button>
+            </Link>
+          </>
+        </Switch>
+        <Route path="/" component={Home} />
+        <Route path="/write" component={Write} />
+      </Router>
+    </div>
   );
 }
 
-render(<App />, document.getElementById('root'));
+export default App;
