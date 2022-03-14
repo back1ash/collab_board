@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom';
 import Write from './write';
 import Home from './home';
+import Login from './login';
+
 
 function App() {
   return (
@@ -13,6 +15,9 @@ function App() {
             </Link>
             <Link to="/write">
               <button>write</button>
+            </Link>
+            <Link to="/login">
+              <button>login</button>
             </Link>
           </>
         </Switch>
